@@ -26,7 +26,8 @@ var App = function(){
   self.routes = {};
   self.routes['health'] = function(req, res){ res.send('1'); };
   
-  self.routes['root'] = function(req, res){res.send('You have come to the park apps web service. All the web services are at /ws/parks*. For example /ws/parks will return all the parks in the system in a JSON payload. Thanks for stopping by and have a nice day'); };
+  //self.routes['root'] = function(req, res){res.send('You have come to the park apps web service. All the web services are at /ws/parks*. For example /ws/parks will return all the parks in the system in a JSON payload. Thanks for stopping by and have a nice day'); };
+  self.routes['root'] = function(req, res){res.sendfile(__dirname + "/public/index.html"); };
 
   //returns all the parks in the collection
   self.routes['returnAllParks'] = function(req, res){
