@@ -91,6 +91,8 @@ var App = function(){
   
   self.app  = express();
 
+  // Static content
+  self.app.use("/public", express.static(__dirname + '/public'));
   //This uses the Connect frameworks body parser to parse the body of the post request
   self.app.configure(function () {
         self.app.use(express.bodyParser());
