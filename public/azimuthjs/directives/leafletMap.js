@@ -23,7 +23,7 @@
 		return {
 			restrict: 'EA',
 			priority: -10,
-			require: 'ngModel',
+			//require: 'ngModel',
 			link: function(scope, elem, attrs, controller) {
 				var layers = layerService.getMapLayers();
 				var center = attrs.center ? attrs.center.split(',') : defaults.CENTER.split(',');
