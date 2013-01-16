@@ -39,7 +39,7 @@
 					'zoom':zoom,
 					'layers':layers
 				}, opts)).on('click', mapClickEvent);
-
+				scope.map = map;
 				$.each(controls,function(i,ctl){
 					var opts = controlOptions[ctl] || undefined;
 					switch(ctl){

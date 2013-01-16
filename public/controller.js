@@ -1,7 +1,7 @@
 
 function NodewsosCtrl($scope, $log, $http, $injector) {
 	var mapService = $injector.get('az.services.layers');
-
+	$scope.map = null;
 
 	$scope.findPark = function() {
 		$log.log("I see this mapLayers " + mapService.getMapLayers());
@@ -14,7 +14,7 @@ function NodewsosCtrl($scope, $log, $http, $injector) {
 		$http.get('/ws/parks/near?lat=' + e.latlng.lat + '&lon=' + e.latlng.lng)
 			.success(function(response) {
 				$log.log("Got this response: " + angular.toJson(response));
-				L.marker([-105.68962, 40.414]).addTo(mapService.getMap());
+				L.marker([-105.68962, 40.414]).addTo($scope.map);
 			});
 	}
 }
