@@ -53,8 +53,9 @@ var App = function(){
       //in production you would do some sanity checks on these values before parsing and handle the error if they don't parse
       var lat = parseFloat(req.query.lat);
       var lon = parseFloat(req.query.lon);
+      var limit = parseInt(req.query.limit); 
 
-      self.db.collection('parkpoints').find( {"pos" : {$near: [lon,lat]}}).toArray(function(err,names){
+      self.db.collection('parkpoints').find( {"pos" : {$near: [lon,lat]}}).limit(limit).toArray(function(err,names){
           res.header("Content-Type:","application/json");
           res.end(JSON.stringify(names));
        });
