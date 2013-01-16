@@ -23,8 +23,7 @@
 		return {
 			restrict: 'EA',
 			priority: -10,
-			require: '^ngModel',
-			link: function(scope, elem, attrs, controller) {
+			link: function(scope, elem, attrs) {
 				var layers = layerService.getMapLayers();
 				var center = attrs.center ? attrs.center.split(',') : defaults.CENTER.split(',');
 				var zoom = attrs.zoom || defaults.ZOOM;
