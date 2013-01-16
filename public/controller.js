@@ -18,7 +18,7 @@ function NodewsosCtrl($scope, $log, $http, $injector) {
 				angular.forEach(response, function(park) {
 					console.log(park.pos);
 					L.marker([park.pos[1], park.pos[0]]).addTo($scope.map)
-						.bindPopup('<p>' + park.name + '</p>');
+						.bindPopup('<p>' + park.Name + '</p>');
 				});
 				//L.marker([-105.68962, 40.414]).addTo($scope.map);
 			});
