@@ -30,6 +30,7 @@
 				var projection = attrs.projection || attrs.proj || attrs.crs || L.CRS['EPSG'+defaults.CRS];
 				var controls = attrs.controls ? attrs.controls.split(',') : [];
 				var controlOptions = angular.extend({}, $parse(attrs.controlOpts)());
+				var mapClickEvent = attrs.mapclick; 
 				var opts = angular.extend({}, $parse(attrs.mapOpts)());
 				
 				var map = L.map(elem[0],angular.extend({
@@ -37,7 +38,7 @@
 					'center':center,
 					'zoom':zoom,
 					'layers':layers
-				}, opts));
+				}, opts)).on('click', mapClickEvent);
 
 				$.each(controls,function(i,ctl){
 					var opts = controlOptions[ctl] || undefined;
