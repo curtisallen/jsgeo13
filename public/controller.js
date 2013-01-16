@@ -16,7 +16,7 @@ function NodewsosCtrl($scope, $log, $http, $injector) {
 				//$log.log("Got this response: " + angular.toJson(response));
 				angular.forEach(response, function(park) {
 					console.log(park.pos);
-					L.marker(park.pos).addTo($scope.map);
+					L.marker([park.pos[1], park.pos[0]]).addTo($scope.map);
 				});
 				//L.marker([-105.68962, 40.414]).addTo($scope.map);
 			});
