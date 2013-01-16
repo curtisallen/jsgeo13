@@ -22,14 +22,20 @@
   <script type="text/javascript" src="public/controller.js"></script>
 </head>
 <body ng-controller="NodewsosCtrl">
-  <!--div>
-    <form class="form-inline" style="padding: 5px;" ng-submit="findPark()">
-      <input type="text" ng-model="parkName" placeholder="Search for a park">
-      <input class="btn-primary" type="submit" value="Search">
-    </form>
-  </div-->
-  <div leaflet-map zoom="4" center="39.83,-98.58" mapclick="mapClick()" mapvar="map">
-    <az-layer name="streets" lyr-type="tiles"></az-layer>
+  <div class="container">
+    <div class="navbar navbar-inverse">
+      <a class="brand" herf="/"> Parks</a>
+    </div>
+    <h1>Click a place (in the US) to see near by parks</h1>
+    <!--div>
+      <form class="form-inline" style="padding: 5px;" ng-submit="findPark()">
+        <input type="text" ng-model="parkName" placeholder="Search for a park">
+        <input class="btn-primary" type="submit" value="Search">
+      </form>
+    </div-->
+    <div leaflet-map zoom="4" center="39.83,-98.58" mapclick="mapClick()" mapvar="map">
+      <az-layer name="streets" lyr-type="tiles"></az-layer>
+    </div>
   </div>
 </body>
 </html>
