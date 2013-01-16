@@ -12,7 +12,7 @@ function NodewsosCtrl($scope, $log, $http, $injector) {
 		$log.log("Map click event at " + e.latlng);
 		var limit = 10; // limit of points to return 
 		$http.get('/ws/parks/near?lat=' + e.latlng.lat + '&lon=' + e.latlng.lng 
-			+ '&limit=' + limit);
+			+ '&limit=' + limit)
 			.success(function(response) {
 				//$log.log("Got this response: " + angular.toJson(response));
 				angular.forEach(response, function(park) {
