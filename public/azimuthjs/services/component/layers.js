@@ -16,7 +16,10 @@ factory('az.services.layers', function($rootScope) {
     			}
     		});
     		return lyrs;
-    	}
+    	},
+        getMap: function() {
+            return this;
+        }
     };
     return layerService;
   });
