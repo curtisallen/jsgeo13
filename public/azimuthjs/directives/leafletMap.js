@@ -30,7 +30,7 @@
 				var projection = attrs.projection || attrs.proj || attrs.crs || L.CRS['EPSG'+defaults.CRS];
 				var controls = attrs.controls ? attrs.controls.split(',') : [];
 				var controlOptions = angular.extend({}, $parse(attrs.controlOpts)());
-				var mapClickEvent = attrs.mapclick; 
+				var mapClickEvent = angular.extend({}, $parse(attrs.mapclick)()); 
 				var opts = angular.extend({}, $parse(attrs.mapOpts)());
 				
 				var map = L.map(elem[0],angular.extend({
