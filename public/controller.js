@@ -12,6 +12,7 @@ function NodewsosCtrl($scope, $log, $http, $injector) {
 		$http.get('/ws/parks/near?lat=' + e.latlng.lat + '&lon=' + e.latlng.lng)
 			.success(function(response) {
 				$log.log("Got this response: " + angular.toJson(response));
+				L.marker([-105.68962, 40.414]).addTo(map);
 			});
 	}
 }
